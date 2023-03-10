@@ -22,10 +22,17 @@ int FirstDigit(int n){
 int LastDigits(int n, int start = 2){
     return n % Convert.ToInt32(Math.Pow(10, RazrCounter(n) - start));
 }
+int numb =  1000123;//new Random().Next(100, Convert.ToInt32(Math.Pow(10, new Random().Next(2, 9))));
+int firstn = FirstDigit(numb);
+int lastn = LastDigits(numb);
 
-int numb = new Random().Next(100, Convert.ToInt32(Math.Pow(10, new Random().Next(2, 9))));
+if(RazrCounter(lastn) < RazrCounter(numb) - 2)
+{
+    firstn = firstn * Convert.ToInt32(Math.Pow(10, RazrCounter(numb) - 2- RazrCounter(lastn))); 
+}
 
-Console.WriteLine($"{numb}:  {FirstDigit(numb)}{LastDigits(numb)}");
+
+Console.WriteLine($"{numb}:  {firstn}{lastn}");
 
 
 // Задача 10: Напишите программу, которая принимает на вход трёхзначное число и на выходе показывает вторую цифру этого числа.
