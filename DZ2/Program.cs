@@ -20,7 +20,7 @@ int FirstDigit(int n){
     return res;
 }
 int LastDigits(int n, int start = 2){
-    return n % Convert.ToInt32(Math.Pow(10, RazrCounter(n) - 2));
+    return n % Convert.ToInt32(Math.Pow(10, RazrCounter(n) - start));
 }
 
 int numb = new Random().Next(100, Convert.ToInt32(Math.Pow(10, new Random().Next(2, 9))));
